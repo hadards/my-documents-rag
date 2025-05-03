@@ -1,0 +1,27 @@
+# === Angular Client ===
+my-documents-rag-client/node_modules/
+my-documents-rag-client/dist/
+my-documents-rag-client/.angular/
+my-documents-rag-client/.env
+my-documents-rag-client/.DS_Store
+
+# === Python Server ===
+my-documents-rag-server/venv/
+my-documents-rag-server/__pycache__/
+my-documents-rag-server/.pytest_cache/
+my-documents-rag-server/.mypy_cache/
+my-documents-rag-server/.DS_Store
+my-documents-rag-server/chroma_db/
+my-documents-rag-server/uploaded_docs/
+
+# === Common ===
+*.pyc
+*.pyo
+*.log
+*.db
+*.sqlite
+*.env
+.DS_Store
+Thumbs.db
+.env.*
+.envrc
