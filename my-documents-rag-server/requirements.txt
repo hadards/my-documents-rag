@@ -1,10 +1,21 @@
+# === Web API
 fastapi
 uvicorn
 python-multipart
+
+# === Document parsing
+docx2txt
+
+# === Embeddings
+sentence-transformers
+langchain-huggingface
+
+# === Vector DB
+chromadb
+
+# === LLM Integration
 langchain
 langchain-community
-langchain-core
-chromadb
-sentence-transformers
-docx2txt
+
+# === Optional (fix common issues)
 shutilwhich
