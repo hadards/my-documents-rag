@@ -1,0 +1,34 @@
+<div class="chat-container">
+  <div class="documents-panel">
+    <h2>Documents</h2>
+    <mat-list>
+      <mat-list-item *ngFor="let doc of selectedDocuments">
+        <mat-checkbox [(ngModel)]="doc.selected">
+          {{ doc.name }}
+        </mat-checkbox>
+      </mat-list-item>
+    </mat-list>
+  </div>
+
+  <div class="chat-panel">
+    <div class="messages">
+      <div *ngFor="let message of messages" 
+           [ngClass]="{'user-message': message.isUser, 'ai-message': !message.isUser}"
+           class="message">
+        {{ message.text }}
+      </div>
+    </div>
+
+    <div class="input-area">
+      <mat-form-field appearance="outline" class="question-input">
+        <input matInput 
+               [(ngModel)]="question" 
+               placeholder="Ask a question about your documents..."
+               (keyup.enter)="sendQuestion()">
+      </mat-form-field>
+      <button mat-fab color="primary" (click)="sendQuestion()">
+        <mat-icon>send</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

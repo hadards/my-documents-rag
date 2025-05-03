@@ -1,0 +1,31 @@
+<div class="upload-container">
+  <h1>Upload Document</h1>
+  <p>Upload Word documents to analyze and extract information for Q&A</p>
+
+  <ngx-dropzone (change)="onSelect($event)" [accept]="'.doc,.docx'" [maxFileSize]="10485760">
+    <ngx-dropzone-label>
+      <div class="dropzone-content">
+        <img src="/assets/document.png" alt="image">
+        <h2>Drop your document here</h2>
+        <p>Drag and drop your Word document, or click to browse your files</p>
+        <button mat-raised-button color="primary">Browse Files</button>
+        <p class="supported-formats">Supported formats: .docx, .doc</p>
+      </div>
+    </ngx-dropzone-label>
+  </ngx-dropzone>
+
+  <div class="file-list" *ngIf="files.length > 0">
+    <h3>Selected Files:</h3>
+    <mat-list>
+      <mat-list-item *ngFor="let file of files">
+        {{ file.name }}
+        <button mat-icon-button (click)="onRemove(file)">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+    <button mat-raised-button color="primary" (click)="uploadFiles()">
+      Upload Files
+    </button>
+  </div>
+</div>
